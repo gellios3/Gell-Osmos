@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9205529976cc4bb981250f8f8cbb3250, type: 3}
+  m_Name: GameplaySettingsObj
+  m_EditorClassIdentifier: 
+  colorItems:
+  - color: {r: 0.015686259, g: 0.026404351, b: 0.48235294, a: 1}
+    radius: 0.1
+  - color: {r: 0.02352941, g: 0.29820028, b: 0.6666667, a: 1}
+    radius: 0.3
+  - color: {r: 0.031372536, g: 0.51737887, b: 0.92156863, a: 1}
+    radius: 0.5
+  - color: {r: 0, g: 0.81236166, b: 0.8207547, a: 1}
+    radius: 0.7
+  - color: {r: 0.1812922, g: 0.990566, b: 0.42459583, a: 1}
+    radius: 1
+  - color: {r: 1, g: 0.9551686, b: 0.29622638, a: 1}
+    radius: 1.2
+  - color: {r: 1, g: 0.5911923, b: 0.135849, a: 1}
+    radius: 1.4
+  - color: {r: 0.98039216, g: 0.32553262, b: 0.18039218, a: 1}
+    radius: 1.7
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    radius: 2
+  - color: {r: 1, g: 0, b: 0.43990326, a: 1}
+    radius: 2.2
+  allSpheres:
+  - {fileID: 11400000, guid: 265c6306b96f15f4b96181ed120bf9f6, type: 2}
+  - {fileID: 11400000, guid: 7f0bf38184dd5b043b2e9166f33f46ef, type: 2}
+  - {fileID: 11400000, guid: 016faf005fbb99643ad90b8d8436dbbc, type: 2}
+  - {fileID: 11400000, guid: c75c7f3b36aaf284f9f4f230dccdf02c, type: 2}
