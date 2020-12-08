@@ -77,7 +77,7 @@ namespace Gameplay.Modules.Sphere.Views
 
         private void CalcNewRadius(ISphereView enemySphere)
         {
-            var absorbingSpeed = Time.deltaTime * 0.9f;
+            var absorbingSpeed = Time.deltaTime;
 
             if (radius >= enemySphere.Radius)
             {

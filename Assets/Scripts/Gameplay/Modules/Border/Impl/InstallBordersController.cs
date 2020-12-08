@@ -9,7 +9,7 @@ namespace Gameplay.Modules.Border.Impl
     public class InstallBordersController : IInitializable
     {
         [Inject] private BorderView[] Borders { get; }
-        
+
         public void Initialize()
         {
             if (Camera.main is null)
@@ -30,34 +30,37 @@ namespace Gameplay.Modules.Border.Impl
             var xDelta = bottomLeftScreenPoint.x - topRightScreenPoint.x;
             var zDelta = topRightScreenPoint.z - bottomLeftScreenPoint.z;
 
+            const float horizontalSize = 2f;
+            const float verticalSize = 0.5f;
+
             Vector3 size;
 
             switch (borderView.Side)
             {
                 case BorderSide.Top:
 
-                    size = new Vector3(Mathf.Abs(xDelta), 0.5f, 2f);
+                    size = new Vector3(Mathf.Abs(xDelta), verticalSize, horizontalSize);
                     borderView.Collider.size = size;
                     borderView.Collider.center = new Vector2(size.x / 2f, size.z / 2f);
                     borderView.Transform.position = new Vector3(xDelta / 2f, 0, topRightScreenPoint.z);
 
                     break;
                 case BorderSide.Bottom:
-                    size = new Vector3(Mathf.Abs(xDelta), 0.5f, 2f);
+                    size = new Vector3(Mathf.Abs(xDelta), verticalSize, horizontalSize);
                     borderView.Collider.size = size;
                     borderView.Collider.center = new Vector2(size.x / 2f, size.z / 2f);
                     borderView.Transform.position = new Vector3(xDelta / 2f, 0, bottomLeftScreenPoint.z - size.z);
 
                     break;
                 case BorderSide.Right:
-                    size = new Vector3(0.5f, 2f, Mathf.Abs(zDelta));
+                    size = new Vector3(horizontalSize, verticalSize, Mathf.Abs(zDelta));
                     borderView.Collider.size = size;
                     borderView.Collider.center = new Vector3(size.x / 2f, 0, size.z / 2f);
                     borderView.Transform.position = new Vector3(xDelta / 2f - size.x, 0, bottomLeftScreenPoint.z);
 
                     break;
                 case BorderSide.Left:
-                    size = new Vector3(0.5f, 2f, Mathf.Abs(zDelta));
+                    size = new Vector3(horizontalSize, verticalSize, Mathf.Abs(zDelta));
                     borderView.Collider.size = size;
                     borderView.Collider.center = new Vector3(size.x / 2f, 0, size.z / 2f);
                     borderView.Transform.position = new Vector3(topRightScreenPoint.x, 0, bottomLeftScreenPoint.z);
@@ -67,6 +70,5 @@ namespace Gameplay.Modules.Border.Impl
                     throw new ArgumentOutOfRangeException();
             }
         }
-
     }
 }
